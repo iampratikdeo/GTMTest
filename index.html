@@ -3,12 +3,12 @@
 <head>
   <!-- Google Tag Manager -->
   <!-- Added Button CLick event in v3 - new deployment comment-->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NKGPGXQF');</script>
-<!-- End Google Tag Manager -->
+  })(window,document,'script','dataLayer','GTM-NKGPGXQF');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome</title>
@@ -68,6 +68,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transform: translateY(0);
     }
 
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+    }
+
+    .btn-secondary:hover {
+      box-shadow: 0 6px 20px rgba(79, 172, 254, 0.6);
+    }
+
     #message {
       margin-top: 2rem;
       font-size: 1.3rem;
@@ -87,15 +103,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKGPGXQF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKGPGXQF"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <div class="container">
     <h1>Hello There!</h1>
     <p>This is a simple one-page website. Click the button below to see it in action.</p>
-    <button class="btn" onclick="handleClick()">Click Me</button>
+    <div class="button-group">
+      <button class="btn" onclick="handleClick()">Click Me</button>
+      <button class="btn btn-secondary" onclick="goToPage()">Visit UTM Page</button>
+    </div>
     <div id="message"></div>
   </div>
+
   <script>
     let clickCount = 0;
     const messages = [
@@ -117,6 +137,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Trigger reflow to restart animation
       void messageEl.offsetWidth;
       messageEl.classList.add('fade-in');
+    }
+
+    function goToPage() {
+      window.open('https://iampratikdeo.github.io/GTMTest/?utm_source=JK&utm_medium=website_click&utm_campaign=spring_sale&utm_id=pratikTest', '_self');
     }
   </script>
 </body>
